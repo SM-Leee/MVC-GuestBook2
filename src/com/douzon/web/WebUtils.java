@@ -8,6 +8,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class WebUtils {
+	public static void redirect(HttpServletRequest request, HttpServletResponse response, String url) throws IOException,ServletException {
+		response.sendRedirect(url);
+	}
+	
 	public static void forward(HttpServletRequest request, HttpServletResponse response, String location) throws IOException,ServletException{
 		RequestDispatcher rd = request.getRequestDispatcher(location);
 		rd.forward(request, response);
